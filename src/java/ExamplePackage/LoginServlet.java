@@ -30,17 +30,17 @@ public class LoginServlet extends HttpServlet
         user = UserDAO.login(user);
         if (user.isValid())
             { 
-                HttpSession session = request.getSession(true);
-                session.setAttribute("currentUser",user.getUsername());
+                HttpSession session = request.getSession(false);
+                session.setAttribute("user", user.getUsername());
                 response.sendRedirect("/WebApplication1/login_success.jsp"); 
             }
 //logged-in page } 
         else 
             response.sendRedirect("/WebApplication1/invalid_login.jsp"); //error page
      }
-        catch (Throwable theException) 
+        catch (Exception e) 
     { 
-         System.out.println(theException); 
+         e.printStackTrace();
     } 
     } 
 }

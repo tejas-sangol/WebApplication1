@@ -13,10 +13,12 @@
     </head>
     <body>
         <h1>Hello World!</h1>
+        
         <form action="LoginServlet">
-            Enter Username:
-            <input type="text" name="un" /><br>
-            <input type="text" name="pw" /><br>
+            <label for="username"> Enter username: </label>
+            <input type="text" id = "username" name="un" /><br>
+            <label for="password"> Enter password </label>
+            <input type="text" id="password" name="pw" /><br>
             <input type="submit" value="OK" />
         </form>
     </body>
